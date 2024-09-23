@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card6">
+    <h1>DONATE HERE</h1>
+    <p> Donate today and be a part of something truly impactful.</p>
+  </div>
+  <div class="donate">
+	<img src="qr.jpg">
+  </div>
+  <div class="button">
+	<button><a href="https://docs.google.com/forms/d/e/1FAIpQLScrUhNCu4Olh9S_AFI_0cfHp_DH-P2aSgD_l6S7E246fmbTzA/viewform?usp=sf_link"> LET US KNOW YOU!</a></button>
+  </div>
+  
+
+</body>
+</html>
+<style>
+   
+
+
+    @media screen and (max-width: 500px){
+	img{
+		margin-top: 50px;
+		margin-left: 20px;
+		height: 500px;
+		width: 350px;
+
+	}
+.button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+button{
+	color: rgb(0, 0, 0);
+ font-weight: bolder;
+	background-color: goldenrod;
+	height: 30px;
+	width: 200px;
+	font-family: cursive;
+	border: 3px solid rgb(53, 53, 53);
+}	
+}
+	*{
+  margin: 0;
+  padding: 0;  
+}
+html{
+  font-family: Poppins;
+  color: #f0f0f0;
+}
+body{
+	margin-top: 30px;
+  min-height: 250px;
+  background: #0b0d15;
+  color: #a2a5b3;
+  align-content: center;
+}
+h1{
+  color: white;
+}
+.card6{
+  margin: 0 auto;
+  padding: 2em;
+  width: 300px;
+  background: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card6::after, .card6::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card6::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+</style>
